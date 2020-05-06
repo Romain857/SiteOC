@@ -34,3 +34,9 @@ calculate.addEventListener('click', () => {
     seconds.innerText = `${calcSeconds} secondes`;
 
 });
+
+let episodTitle = 'Northman';
+let episodDuration = '50 minutes';
+let hasBeenWatched = true;
+
+document.querySelector('#episod').innerText = `Serie : ${episodTitle}, Duration : ${episodDuration} of hapiness, Watched : ${hasBeenWatched}`
