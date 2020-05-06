@@ -28,3 +28,26 @@ console.log(typeof firstName + ' ' + lastName);
 let te = true;
 console.log(typeof episodeTime);
 console.log(typeof te);
+
+alert('hi');
+document.write("azertyuio");
+
+let epi = ["jean", "michel", "jose"];
+console.log(epi);
+
+let number = 5;
+let copie = number;
+
+console.log(copie);
+
+const tab = [
+    "jean",
+    "michel",
+    "jo"
+];
+
+tab.push("jules");
+tab.unshift("pierrick");
+tab.pop();
+
+console.log(tab);
