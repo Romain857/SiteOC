@@ -54,52 +54,81 @@ document.querySelector('#episod').innerText = `Serie : ${episodTitle}, Duration 
  let epDuration = Episode.duration;
 
  class episode{
-     constructor(title, duration, hasBeenWatched){
+     constructor(title, duration, minutesWatched){
          this.title = title;
          this.duration = duration;
-         this.hasBeenWatched = hasBeenWatched;
-     }
- }
+         this.minutesWatched = minutesWatched;
 
- let firstEpisode = new episode("La casa de papel", 45, true);
- let secondEpisode = new episode("La casa de stone", 50, false);
- let thirdEpisode = new episode("La casa de iron", 30, true);
+          if (duration == minutesWatched){
+            this.hasBeenWatched = true
+          } else if (minutesWatched < duration) {
+            this.hasBeenWatched = false
+        }
+
+        if (duration == minutesWatched){
+            this.watchedText = 'Deja regardé';
+            this.continueWatching = false;
+        }else if (minutesWatched > 0 && minutesWatched < duration){
+          this.continueWatching = true;  
+          this.watchedText = 'En cours';
+        }else if (minutesWatched == 0){
+          this.continueWatching = false;
+          this.watchedText = 'Pas encore visionné';
+        }
+
+     }
+  }
+ 
+  let firstEpisode = new episode("La casa de papel", 45, 45);
+ let secondEpisode = new episode("La casa de stone", 50, 40);
+ let thirdEpisode = new episode("La casa de iron", 30, 0);
+
+
 
  document.querySelector('#first-episode-info').innerText = `Episode: ${firstEpisode.title}
 Duration: ${firstEpisode.duration} min
-${firstEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'}`;
+${firstEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'},  
+Etat : ${firstEpisode.watchedText}`;
 
 document.querySelector('#second-episode-info').innerText = `Episode: ${secondEpisode.title}
 Duration: ${secondEpisode.duration} min
-${secondEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'}`;
+${secondEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'},
+Etat : ${secondEpisode.watchedText}`;
 
 document.querySelector('#third-episode-info').innerText = `Episode: ${thirdEpisode.title}
 Duration: ${thirdEpisode.duration} min
-${thirdEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'}`;
+${thirdEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'},
+Etat : ${thirdEpisode.watchedText}`;
   
-/*
+
     let episo = [];
     episo.push(firstEpisode, secondEpisode, thirdEpisode, thirdEpisode);
     episo.pop();
     let numberOfEpisods = episo.length;
     document.querySelector('#episodes').innerText = numberOfEpisods;
-
-    const body = document.querySelector('body');
   
-  for(let i = 0; i < 12; i++) {
-    let newDiv = document.createElement('div');
-    newDiv.classList.add('series-frame');
-    let newTitle = document.createElement('h2');
-    newTitle.innerText = 'The Story of Tau';
-    let newParagraph = document.createElement('p');
-    newParagraph.innerText = `${episo[i].title}
-  ${episo[i].duration} minutes
-  ${episo[i].hasBeenWatched ? 'Already been watched' : 'Not yet watched'}`;
-    newDiv.append(newTitle);
-    newDiv.append(newParagraph);
-    body.append(newDiv);
+    /*
+  const body = document.querySelector('body');
 
-  }*/
+for(let i = 0; i < 12; i++) {
+  let newDiv = document.createElement('div');
+  newDiv.classList.add('series-frame');
+  let newTitle = document.createElement('h2');
+  newTitle.innerText = 'The Story of Tau';
+  let newParagraph = document.createElement('p');
+  newParagraph.innerText = `${episo[i].title}
+${episo[i].duration} minutes
+${episo[i].watchedText}
+`;
+  newDiv.append(newTitle);
+  newDiv.append(newParagraph);
+  if (episo[i].continueWatching) {
+    let newButton = document.createElement('button');
+    newButton.innerText = 'Continue watching';
+    newParagraph.append(newButton);
+  }
+  body.append(newDiv);
+}*/
 
   const nombre = document.querySelector("#nombre");
   const valide = document.querySelector("#valide");

@@ -51,3 +51,79 @@ tab.unshift("pierrick");
 tab.pop();
 
 console.log(tab);
+
+let bonjour = true;
+let welcome = '';
+
+if (bonjour) {
+  welcome = 'Yep';
+}else {
+  welcome = 'nop';
+}
+
+console.log(welcome);
+
+let p = 5;
+  let m = '5';            // == que valeur === valeur et type
+  let welcom = '';
+
+  if (p === m){
+    welcom = 'yes p'; 
+  } else {
+    welcom = 'nop m';
+  }
+
+  console.log(welcom);
+
+
+let userLoggedIn = true;
+let userHasPremiumAccount = true;
+let userHasMegaPremiumAccount = false;
+
+userLoggedIn && userHasPremiumAccount; // true
+userLoggedIn && userHasMegaPremiumAccount; // false
+
+userLoggedIn || userHasPremiumAccount; // true
+userLoggedIn || userHasMegaPremiumAccount; // true
+
+!userLoggedIn; // false
+!userHasMegaPremiumAccount; // true
+
+
+// switch
+
+let fUser = {
+  nom : 'jean',
+  age : 20, 
+  niveau : 'faible'
+}
+
+let sUser = {
+  nom : 'michel',
+  age : 22, 
+  niveau : 'moyens'
+}
+
+let tUser = {
+  nom : 'joe',
+  age : 30, 
+  niveau : 'fort'
+}
+
+switch(fUser.niveau) {
+  case 'faible' : 
+  console.log('1');
+  break;
+
+  case 'moyens' : 
+  console.log('2');
+  break;
+
+  case 'fort' : 
+  console.log('3');
+  break;
+
+  default : 
+  console.log('nop')
+
+}
