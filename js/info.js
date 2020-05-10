@@ -182,3 +182,37 @@ ${episo[i].watchedText}
     document.querySelector('#colin-score').innerText = colinAverage.toFixed(1) + ' stars';
     document.querySelector('#clara-score').innerText = `${calculateAverageRating([]) === 0 ? 'No ratings' : calculateAverageRating([]) + ' stars'}`
   }
+
+  const calculateur = (a, b, c, d, e, f) => {
+    const ajout = calculateur.length;
+    return ajout;
+  }
+
+  ajout = calculateur(5, 4, 5, 5, 1, 2);
+  console.log(ajout);
+
+
+  class music{
+
+    constructor(format){
+      this.format = format;
+    }
+
+    play(){
+      console.log("lecture en cours...");
+    }
+
+    getFormat(){
+      return this.format;
+    }
+
+    setFormat(newFormat){
+      this.format = newFormat;
+    }
+  };
+
+  let player = new music("MP3");
+  console.log(player.getFormat());
+  player.setFormat("M4A");
+  console.log(player.getFormat());
+  console.log(player.play());

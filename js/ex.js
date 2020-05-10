@@ -222,3 +222,21 @@ const somme = (nombre1, nombre2) => {
 
 result = somme(6,7);
 console.log(result);
+
+
+function hello(){
+  document.write("Hello world !");
+}
+
+hello();
+
+let data ='OK';
+
+function database(){
+
+  let data2 = 2;
+  document.write(data2);
+  document.write('Test de : ' + data);
+}
+
+database();
