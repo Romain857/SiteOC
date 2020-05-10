@@ -68,12 +68,15 @@ document.querySelector('#episod').innerText = `Serie : ${episodTitle}, Duration 
         if (duration == minutesWatched){
             this.watchedText = 'Deja regardé';
             this.continueWatching = false;
+            this.time = 'Tout vu';
         }else if (minutesWatched > 0 && minutesWatched < duration){
           this.continueWatching = true;  
           this.watchedText = 'En cours';
+          this.time = 'Il reste : ' + (duration - minutesWatched) + ' minutes';
         }else if (minutesWatched == 0){
           this.continueWatching = false;
           this.watchedText = 'Pas encore visionné';
+          this.time = 'Rien vu';
         }
 
      }
@@ -82,8 +85,7 @@ document.querySelector('#episod').innerText = `Serie : ${episodTitle}, Duration 
   let firstEpisode = new episode("La casa de papel", 45, 45);
  let secondEpisode = new episode("La casa de stone", 50, 40);
  let thirdEpisode = new episode("La casa de iron", 30, 0);
-
-
+ 
 
  document.querySelector('#first-episode-info').innerText = `Episode: ${firstEpisode.title}
 Duration: ${firstEpisode.duration} min
@@ -101,13 +103,21 @@ ${thirdEpisode.hasBeenWatched ? 'Already watched' : 'Not yet watched'},
 Etat : ${thirdEpisode.watchedText}`;
   
 
+document.querySelector('#visio1').innerText = `Visionné : ${firstEpisode.minutesWatched} minutes
+${firstEpisode.time}`
+document.querySelector('#visio2').innerText = `Visionné : ${secondEpisode.minutesWatched} minutes
+${secondEpisode.time}`
+document.querySelector('#visio3').innerText = `Visionné : ${thirdEpisode.minutesWatched} minutes
+${thirdEpisode.time}`
+
+/*
     let episo = [];
     episo.push(firstEpisode, secondEpisode, thirdEpisode, thirdEpisode);
     episo.pop();
     let numberOfEpisods = episo.length;
     document.querySelector('#episodes').innerText = numberOfEpisods;
   
-    /*
+    
   const body = document.querySelector('body');
 
 for(let i = 0; i < 12; i++) {
@@ -144,3 +154,31 @@ ${episo[i].watchedText}
     }
      
   });
+
+  const calculateAverageRating = (ratings) => {
+
+    if(ratings.length === 0) {
+      return 0;
+    }
+    
+    let sum = 0;
+    for (let rating of ratings) {
+      sum += rating;
+    }
+    
+    return sum / ratings.length;
+    
+  }
+
+  
+  const tauRatings = [5, 4, 5, 5, 1, 2];
+  const colinRatings = [5, 5, 5, 4, 5];
+  
+  const tauAverage = calculateAverageRating(tauRatings);
+  const colinAverage = calculateAverageRating(colinRatings);
+  
+  if (tauAverage && colinAverage) {
+    document.querySelector('#tau-score').innerText = tauAverage.toFixed(1) + ' stars';
+    document.querySelector('#colin-score').innerText = colinAverage.toFixed(1) + ' stars';
+    document.querySelector('#clara-score').innerText = `${calculateAverageRating([]) === 0 ? 'No ratings' : calculateAverageRating([]) + ' stars'}`
+  }

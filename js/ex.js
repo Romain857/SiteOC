@@ -127,3 +127,98 @@ switch(fUser.niveau) {
   console.log('nop')
 
 }
+
+// boucle
+
+let nombres = 12;
+
+for(let j = 0; j < nombres; j++){
+  console.log('bonjour');
+}
+console.log('par ici');
+
+
+var personnes = 10;
+
+for (siege = 0; siege < personnes; siege++){
+  console.log("Personne assise");
+}
+console.log('Tout le monde est assis');
+
+
+// in
+const personnes = [
+  'Jean',
+  'michel',
+  'Yves',
+  'Marcel'
+]
+
+for (let i in personnes){
+  console.log('Le passager ' + personnes[i] + ' est assis')
+}
+
+// of
+const habitant = [
+  'Francais',
+  'Belge',
+  'Espagnol',
+  'anglais'
+]
+
+for(let habitants of habitant){
+  console.log(habitants + ' est chez lui');
+}
+
+
+// tableau plus complex -> of
+const personnes = [
+  {
+    nom : 'jean',
+    numero : 1
+  },
+  {
+    nom : 'michel',
+    numero : 2
+  },
+  {
+    nom : 'jo',
+    numero : 3
+  },
+  {
+    nom : 'gilles',
+    numero : 4,
+  }
+
+]
+
+for(let i of personnes){
+  console.log(i.nom + ' possède le numéro ' + i.numero);
+}
+
+
+let seatsLeft = 10;
+let passengersStillToBoard = 8;
+
+let passengersBoarded = 0;
+
+while (seatsLeft > 0 && passengersStillToBoard > 0) {
+    passengersBoarded++; // un passager embarque
+    passengersStillToBoard--; // donc il y a un passager de moins à embarquer
+    seatsLeft--; // et un siège de moins
+}
+
+console.log(passengersBoarded);
+console.log(passengersStillToBoard); // imprime 8, car il y a 8 passagers pour 10 sièges
+console.log(seatsLeft);
+
+
+
+// fonction
+const somme = (nombre1, nombre2) => {
+  const result = nombre1 + nombre2;
+  return result;
+}
+
+result = somme(6,7);
+console.log(result);
