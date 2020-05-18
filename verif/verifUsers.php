@@ -25,7 +25,7 @@ foreach ($resultats as $ligne){
 if ($error==0){
     header('location: ../connexion.php?error='.$error);
 }else{
-    header('location: ../index.html');
+    header('location: ../menu.php');
 
 }
 ?>
