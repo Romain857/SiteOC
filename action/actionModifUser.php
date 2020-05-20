@@ -11,7 +11,7 @@ $db = new PDO("mysql:host=".config::SERVEUR.";dbname=".config::BASEDEDONNEES,
     config::UTILISATEUR,config::MOTDEPASSE);
 
 
-$r=$db->prepare("update user (id, nom, mdp, email, numTel) values ( :id, :nom, :mdp, :email, :numTel)");
+$r=$db->prepare("update utilisateur set nom=:nom, mdp=:mdp, email=:email, numTel=:numTel where id=:id");
 
 $r->bindParam(":id",$id);
 $r->bindParam(":nom",$nom);

@@ -1,10 +1,10 @@
 <?php
 include_once "header.php";
-mon_header("modifSerie.php");
+mon_header("modifUser.php");
 ?>
 
 <main class="container">
-    <h1>Modifier les informations de la série</h1>
+    <h1>Modifier les informations de l'utilisateur</h1>
 
 <?php
 $id=filter_input(INPUT_GET,"id");
@@ -12,7 +12,7 @@ require "config.php";
 $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES
     ,Config::UTILISATEUR, Config::MOTDEPASSE);
 
-$r = $db->prepare("select * from user where id=:id");
+$r = $db->prepare("select * from utilisateur where id=:id");
 $r->bindParam(":id",$id);
 $r->execute();
 

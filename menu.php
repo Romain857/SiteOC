@@ -76,11 +76,12 @@ mon_header("Menu");
 ?>
 
   <!-- sidebar-wrapper  -->
-  <main class="container">
-    <br><table class="table table-bordered table-hover">
+  <main class="page-content">
+    <br><table class="table table-bordered table-hover" style="text-align:center">
     <tr>
         <th>Nom</th>
         <th>Nombre de saison</th>
+        <th>Note</th>
         <th>Etat</th>
     </tr>
 
@@ -102,12 +103,13 @@ mon_header("Menu");
         <tr>
             <td><?php echo $ligne["nom"] ?></td>
             <td><?php echo $ligne["nombreSaison"] ?></td>
-            <td><?php echo $ligne["etat"] ?></td> 
-
+            <td><strong><?php echo $ligne["note"] ?></strong> / 5</td>
+            <td><?php echo color ("$ligne[etat]") ?></td> 
+        
             <td>
                 <a href="modifSerie.php?id=<?php echo $ligne["id"] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
 
-                <a href="action/actionSupprSerie?id=<?php echo $ligne["id"] ?>"
+                <a href="action/actionSupprSerie.php?id=<?php echo $ligne["id"] ?>"
                    onclick="return confirm('Etes-vous sur ?')"
                    class="btn btn-danger">
                     <i class="fa fa-recycle"></i>
@@ -116,19 +118,41 @@ mon_header("Menu");
              </td>
              
              <td>
-                <a href="cloturer.php?id=<?php echo $ligne["id"] ?>" class="btn btn-outline-dark link">
-                    <i class="fas fa-times-circle"></i>
+                <a href="visionne.php?id=<?php echo $ligne["id"] ?>" class="btn btn-outline-info link">
+                <i class="fas fa-eye"></i>
                     Visionné ?
+                </a>
+            </td>
+            <td>
+                <a href="calcul.php?id=<?php echo $ligne["id"] ?>" class="btn btn-outline-success link">
+                  Calcul
+                <i class="fas fa-chart-pie"></i>
                 </a>
             </td>
         </tr>
 
-    <?Php } ?>
-    
+    <?php } ?>
+
     </table>   
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
+
+<?php
+
+    function color($etat) {
+        if($etat=="Vu") {
+            echo "<button type=\"button\" class=\"btn btn-outline-success\">Vu <i class=\"fas fa-check-circle\"></i></button> ";
+
+        } elseif ($etat=="En cours") {
+            echo "<button type=\"button\" class=\"btn btn-outline-warning\">En cours <i class=\"fas fa-exclamation-triangle\"></i></button>";
+
+        }elseif ($etat=="Pas vu"){
+          echo "<button type=\"button\" class=\"btn btn-outline-danger\">Pas vu <i class=\"fas fa-exclamation-circle\"></i></button>";
+        }
+    }
+
+    ?>
 
 <?php
 include_once "footer.php";

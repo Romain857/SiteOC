@@ -357,6 +357,8 @@
     width: 100%;
     padding-left: 0px;
     padding-top: 20px;
+    padding-right: 100px;
+    margin-top: 50px;
   }
   
   .page-wrapper .page-content > div {

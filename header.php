@@ -1,4 +1,5 @@
 <?php
+session_start();
 function mon_header($title){
 ?>
 <!DOCTYPE html>
@@ -35,7 +36,7 @@ function mon_header($title){
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="#">Dev</a>
+        <a href="menu.php">Dev</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -77,14 +78,30 @@ function mon_header($title){
           </li>
           <li class="sidebar-dropdown">
             <a href="#">
-              <i class="fa fa-tachometer-alt"></i>
-              <span>Dashboard</span>
-              <span class="badge badge-pill badge-warning">New</span>
+              <i class="fa fa-globe"></i>
+              <span>Profil</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Dashboard 1
+                  <a href="#">Profil</a>
+                </li>
+                <li>
+                  <a href="#">What More</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Project</span>
+              <span class="badge badge-pill badge-primary">Beta</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="menu.php">Project Series
                     <span class="badge badge-pill badge-success">Pro</span>
                   </a>
                 </li>
@@ -166,30 +183,14 @@ function mon_header($title){
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Maps</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-                  <a href="#">Google maps</a>
-                </li>
-                <li>
-                  <a href="#">Open street map</a>
-                </li>
-              </ul>
-            </div>
-          </li>
           <li class="header-menu">
-            <span>Extra</span>
+            <span>More</span>
           </li>
           <li>
             <a href="indexUser.php">
               <i class="fa fa-book"></i>
-              <span>Documentation</span>
-              <span class="badge badge-pill badge-primary">Beta</span>
+              <span>Users</span>
+              <span class="badge badge-pill badge-warning">New</span>
             </a>
           </li>
           <li>

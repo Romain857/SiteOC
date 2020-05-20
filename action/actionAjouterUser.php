@@ -11,7 +11,7 @@ $db = new PDO("mysql:host=".config::SERVEUR.";dbname=".config::BASEDEDONNEES,
     config::UTILISATEUR,config::MOTDEPASSE);
 
 
-$r=$db->prepare("insert into user (id, nom, mdp, email, numTel) values ( :id, :nom, :mdp, :email, :numTel)");
+$r=$db->prepare("insert into utilisateur (id, nom, mdp, email, numTel) values ( :id, :nom, :mdp, :email, :numTel)");
 
 $r->bindParam(":id",$id);
 $r->bindParam(":nom",$nom);
@@ -20,5 +20,5 @@ $r->bindParam(":email",$email);
 $r->bindParam(":numTel",$numTel);
 
 $r->execute();
-
+//$r->debugDumpParams();
 header('location: ../indexUser.php');

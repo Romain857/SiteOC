@@ -6,7 +6,7 @@ require_once "../config.php";
 $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES
     ,Config::UTILISATEUR, Config::MOTDEPASSE);
 
-$r=$db->prepare("delete from user where id=:id");
+$r=$db->prepare("delete from utilisateur where id=:id");
 
 $r->bindParam("id",$id);
 

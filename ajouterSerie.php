@@ -23,6 +23,13 @@ mon_header("ajouterSerie");
         </div>
 
         <div class="form-group">
+            <label for="note">Note</label>
+            <input type="text" class="form-control" id="note"
+                   name="note"
+                   placeholder="Note..." required>
+        </div>
+
+        <div class="form-group">
             <label for="etat">Etat</label>
             <input type="text" class="form-control" id="etat"
                    name="etat"

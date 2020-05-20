@@ -3,7 +3,7 @@
     </main>
     </body>
     </html>
-
+<!--
 <link rel="stylesheet" href="global.css">
 <div class="bottom section-padding">
 			<div class="container">
@@ -15,6 +15,6 @@
 					</div>
 				</div>
 			</div>
-        </div>
+        </div> -->
         
 <?php } ?>

@@ -41,6 +41,13 @@ foreach ($resultats as $ligne){
             </div>
 
             <div class="form-group">
+                <label for="note">Note</label>
+                <input type="text" class="form-control" id="note"
+                       name="note" value="<?php echo $resultats["0"]["note"]?>"
+                       placeholder="Note...">
+            </div>
+
+            <div class="form-group">
                 <label for="etat">Etat</label>
                 <input type="text" class="form-control" id="etat"
                        name="etat" value="<?php echo $resultats["0"]["etat"]?>"

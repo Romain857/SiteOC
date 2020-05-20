@@ -3,7 +3,7 @@ include_once "header.php";
 mon_header("Menu");
 ?>
 
-<main class="container">
+<main class="page-content">
     <h1><a href="#" class="text-decoration-none">
             <p class="font-italic">Listes des utilisateur</p>
         </a>
@@ -19,7 +19,7 @@ mon_header("Menu");
     <?php
     require "config.php";
     $db = new PDO("mysql:host=".config::SERVEUR.";dbname=".config::BASEDEDONNEES, config::UTILISATEUR, config::MOTDEPASSE);
-    $r = $db->prepare("select id, nom, mdp, email, numTel from utilisateur");
+    $r = $db->prepare("select * from utilisateur");
     $r->execute();
     $resultats=$r->fetchALL();
 
@@ -33,12 +33,8 @@ mon_header("Menu");
             <td><?php echo $ligne["email"] ?></td>
             <td><?php echo $ligne["numTel"] ?></td>
             <td>
-                <form method="get" action="action/actionModifUser.php">
-                    <input type="hidden" name="id" value="<?php echo $ligne["id"] ?>">
-                    <button type="submit"
-                            class="btn btn-primary">
-                        <i class="fa fa-edit"></i>
-                    </button>
+
+            <a href="modifUser.php?id=<?php echo $ligne["id"] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
 
                 <a href="action/actionSupprUser.php?id=<?php echo $ligne["id"] ?>"
                    onclick="return confirm('Etes-vous sur ?')"
@@ -53,7 +49,7 @@ mon_header("Menu");
     ?>
     </table>
 
-    <a href="menu.php" class="btn btn-danger pull-left">
-        <i class="fal fa-long-arrow-left"></i>
-        Retour
-    </a>
+    <?php
+include_once "footer.php";
+mon_footer();
+?>
