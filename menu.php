@@ -77,15 +77,17 @@ mon_header("Menu");
 
   <!-- sidebar-wrapper  -->
   <main class="page-content">
+  
     <br><table class="table table-bordered table-hover" style="text-align:center">
     <tr>
         <th>Nom</th>
         <th>Nombre de saison</th>
         <th>Note</th>
         <th>Etat</th>
+        <th>Avis</th>
     </tr>
 
-    <a href="ajouterSerie.php" class="btn btn-success">Ajouter une série</a>
+    <a href="ajouterSerie.php" class="btn btn-primary">Ajouter une série</a>
     
     <?php
     require"config.php";
@@ -103,8 +105,9 @@ mon_header("Menu");
         <tr>
             <td><?php echo $ligne["nom"] ?></td>
             <td><?php echo $ligne["nombreSaison"] ?></td>
-            <td><strong><?php echo $ligne["note"] ?></strong> / 5</td>
+            <td><strong><?php echo $ligne["note"] ?></strong> / 10</td>
             <td><?php echo color ("$ligne[etat]") ?></td> 
+            <td><?php echo $ligne["avis"] ?></td>
         
             <td>
                 <a href="modifSerie.php?id=<?php echo $ligne["id"] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
@@ -123,18 +126,18 @@ mon_header("Menu");
                     Visionné ?
                 </a>
             </td>
-            <td>
-                <a href="calcul.php?id=<?php echo $ligne["id"] ?>" class="btn btn-outline-success link">
-                  Calcul
-                <i class="fas fa-chart-pie"></i>
-                </a>
-            </td>
         </tr>
 
     <?php } ?>
 
     </table>   
   <!-- page-content" -->
+ 
+                <a href="calcul.php?id=<?php echo $ligne["id"] ?>" class="btn btn-success link" style="float:right">
+                    Calcul
+                  <i class="fas fa-chart-pie"></i>
+                </a>
+           
 </div>
 <!-- page-wrapper -->
 

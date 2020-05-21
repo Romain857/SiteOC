@@ -48,10 +48,17 @@ foreach ($resultats as $ligne){
             </div>
 
             <div class="form-group">
-                <label for="etat">Etat</label>
+                <label for="etat">Etat</label><i> (Vu, En cours, Pas vu)</i>
                 <input type="text" class="form-control" id="etat"
                        name="etat" value="<?php echo $resultats["0"]["etat"]?>"
                        placeholder="Etat...">
+            </div>
+
+            <div class="form-group">
+                <label for="avis">Avis</label>
+                <input type="text" class="form-control" id="avis"
+                       name="avis" value="<?php echo $resultats["0"]["avis"]?>"
+                       placeholder="Votre avis...">
             </div>
 
             <a href="menu.php" class="btn btn-danger pull-left">

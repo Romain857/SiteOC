@@ -1,6 +1,6 @@
 <?php
 include_once "header.php";
-mon_header("visionneSerie");
+mon_header("effectueTache");
 ?>
 
 <<main class="container">
@@ -12,7 +12,7 @@ require "config.php";
 $db = new PDO("mysql:host=".Config::SERVEUR.";dbname=".Config::BASEDEDONNEES
     ,Config::UTILISATEUR, Config::MOTDEPASSE);
 
-$r = $db->prepare("select etat from serie where id=:id");
+$r = $db->prepare("select etat from calendrier where id=:id");
 $r->bindParam(":id",$id);
 $r->execute();
 
@@ -24,7 +24,7 @@ foreach ($resultats as $ligne){
 }
 ?>
 
-    <form method="post" action="action/actionModifSerie.php">
+    <form method="post" action="action/actionModifTache.php">
     <input type="hidden" name="id" value="<?php echo $id?>">
 
 
@@ -35,7 +35,7 @@ foreach ($resultats as $ligne){
                    placeholder="Etat..." required>
         </div>
 
-        <a href="menu.php" class="btn btn-danger pull-left">
+        <a href="calendrier.php" class="btn btn-danger pull-left">
             <i class="fal fa-long-arrow-left"></i>
             Retour
         </a>

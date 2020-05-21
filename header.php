@@ -84,7 +84,7 @@ function mon_header($title){
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Profil</a>
+                  <a href="profil.php">Profil</a>
                 </li>
                 <li>
                   <a href="#">What More</a>
@@ -101,15 +101,17 @@ function mon_header($title){
             <div class="sidebar-submenu">
               <ul>
                 <li>
+                  <a href="index.html">Presentation Test
+                    <span class="badge badge-pill badge-warning">Alpha</span>
+                  </a>
+                </li>
+                <li>
                   <a href="menu.php">Project Series
                     <span class="badge badge-pill badge-success">Pro</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Dashboard 2</a>
-                </li>
-                <li>
-                  <a href="#">Dashboard 3</a>
+                  <a href="#">N/A</a>
                 </li>
               </ul>
             </div>
@@ -118,7 +120,6 @@ function mon_header($title){
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
               <span>E-commerce</span>
-              <span class="badge badge-pill badge-danger">3</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
@@ -194,9 +195,10 @@ function mon_header($title){
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="calendrier.php">
               <i class="fa fa-calendar"></i>
               <span>Calendar</span>
+              <span class="badge badge-pill badge-danger">3</span>
             </a>
           </li>
           <li>

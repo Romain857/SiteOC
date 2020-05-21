@@ -30,10 +30,17 @@ mon_header("ajouterSerie");
         </div>
 
         <div class="form-group">
-            <label for="etat">Etat</label>
+            <label for="etat">Etat</label><i> (Vu, En cours, Pas vu)</i>
             <input type="text" class="form-control" id="etat"
                    name="etat"
                    placeholder="Etat..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="avis">Avis</label>
+            <input type="text" class="form-control" id="avis"
+                   name="avis"
+                   placeholder="Votre avis..." required>
         </div>
 
         <a href="menu.php" class="btn btn-danger pull-left">

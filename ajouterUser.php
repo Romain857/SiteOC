@@ -26,14 +26,14 @@ mon_header("ajouterUser");
                 <label for="email">Email</label>
                 <input type="text" class="form-control" id="email"
                        name="email" 
-                       placeholder="Email...">
+                       placeholder="Email..." required>
             </div>
 
             <div class="form-group">
-                <label for="numTel">Etat</label>
+                <label for="numTel">Numero de Telephone</label>
                 <input type="text" class="form-control" id="numTel"
                        name="numTel" 
-                       placeholder="Numero de tel...">
+                       placeholder="Numero de tel..." required>
             </div>
 
         <a href="indexUser.php" class="btn btn-danger pull-left">
